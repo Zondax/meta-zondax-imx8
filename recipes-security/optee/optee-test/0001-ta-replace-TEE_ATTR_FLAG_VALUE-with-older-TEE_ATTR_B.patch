@@ -1,0 +1,22 @@
+From a4d52c1d9b71e2965a2a579124f6453a0b29055e Mon Sep 17 00:00:00 2001
+From: zondax <info@zondax.ch>
+Date: Sat, 27 Nov 2021 19:15:37 +0000
+Subject: [PATCH] ta: replace TEE_ATTR_FLAG_VALUE with older TEE_ATTR_BIT_VALUE
+
+---
+ ta/crypt/cryp_taf.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ta/crypt/cryp_taf.c b/ta/crypt/cryp_taf.c
+index 82f640f..84e0455 100644
+--- a/ta/crypt/cryp_taf.c
++++ b/ta/crypt/cryp_taf.c
+@@ -341,7 +341,7 @@ static TEE_Result unpack_attrs(const uint8_t *buf, size_t blen,
+ 			uintptr_t p;
+ 
+ 			a[n].attributeID = ap[n].id;
+-			if (ap[n].id & TEE_ATTR_FLAG_VALUE) {
++			if (ap[n].id & TEE_ATTR_BIT_VALUE) {
+ 				a[n].content.value.a = ap[n].a;
+ 				a[n].content.value.b = ap[n].b;
+ 				continue;

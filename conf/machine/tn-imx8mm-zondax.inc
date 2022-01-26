@@ -1,13 +1,13 @@
-MACHINEOVERRIDES =. "mx8:mx8m:mx8mq:"
+MACHINEOVERRIDES =. "mx8:mx8m:mx8mm:"
 
 require conf/machine/include/imx-base.inc
 require conf/machine/include/arm/armv8a/tune-cortexa53.inc
 
 MACHINE_FEATURES += "pci wifi bluetooth optee"
 
-MACHINE_SOCARCH_FILTER:append:mx8mq = " virtual/libopenvg virtual/libgles1 virtual/libgles2 virtual/egl virtual/mesa virtual/libgl virtual/libg2d"
+MACHINE_SOCARCH_FILTER:append:mx8mm = " virtual/libopenvg virtual/libgles1 virtual/libgles2 virtual/egl virtual/mesa virtual/libgl virtual/libg2d"
 
-IMX_DEFAULT_KERNEL:mx8mq = "linux-tn-imx"
+IMX_DEFAULT_KERNEL:mx8mm = "linux-tn-imx"
 
 EXTRA_OEMAKE:append:pn-linux-tn-imx = " DTC_FLAGS='-@ -H epapr'"
 
@@ -26,20 +26,25 @@ DDR_FIRMWARE_NAME = " \
 "
 
 # Set ATF platform name
-ATF_PLATFORM = "imx8mq"
+ATF_PLATFORM = "imx8mm"
+ATF_LOAD_ADDR = "0x920000"
 
 # Extra firmware package name, that is required to build boot container for fslc bsp
 IMX_EXTRA_FIRMWARE = "firmware-imx-8m"
 
 # Set imx-mkimage boot target
-IMXBOOT_TARGETS = "flash_evk flash_evk_no_hdmi flash_dp_evk"
-IMX_BOOT_SOC_TARGET = "iMX8M"
+IMXBOOT_TARGETS = "flash_evk flash_evk_no_hdmi"
+IMX_BOOT_SOC_TARGET = "iMX8MM"
 
-SERIAL_CONSOLES = "115200;ttymxc0"
+SERIAL_CONSOLES = "115200;ttymxc1"
 
 LOADADDR = ""
 UBOOT_SUFFIX = "bin"
-UBOOT_MAKE_TARGET = ""
+UBOOT_MAKE_TARGET = "all"
 IMX_BOOT_SEEK = "33"
 
-OPTEE_BIN_EXT = "8mq"
+OPTEE_BIN_EXT = "8mm"
+TEE_LOAD_ADDR = "0xbe000000"
+
+KERNEL_CLASSES = " kernel-fitimage "
+KERNEL_IMAGETYPE:aarch64 = "fitImage"

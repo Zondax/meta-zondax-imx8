@@ -14,15 +14,15 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 DEPENDS += "lzop-native bc-native"
 
-KERNEL_BRANCH ?= "tn-imx_5.10.52_2.1.0-next"
+KERNEL_BRANCH ?= "tn-imx_5.10.72_2.2.0-next"
 LOCALVERSION = "${@'-%s' % '-'.join(d.getVar('KERNEL_BRANCH', True).split('_')[2:]).lower()}"
 KERNEL_SRC ?= "git://github.com/TechNexion/linux-tn-imx.git;protocol=https"
 SRCOPTIONS = ""
 SRC_URI = "${KERNEL_SRC};branch=${KERNEL_BRANCH}${SRCOPTIONS}"
 
-SRCREV = "486b33f92ecdb27ac4959e5cc39dde2213339cfc"
+SRCREV = "c0896c3e2e506d6d12576270c75ee1344e9c7121"
 
-LINUX_VERSION = "5.10.52"
+LINUX_VERSION = "5.10.72"
 
 FILES:${KERNEL_PACKAGE_NAME}-base += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/modules.builtin.modinfo "
 

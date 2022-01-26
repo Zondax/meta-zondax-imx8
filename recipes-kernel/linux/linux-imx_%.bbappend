@@ -1,0 +1,1 @@
+UBOOT_DTB_BINARY = ""

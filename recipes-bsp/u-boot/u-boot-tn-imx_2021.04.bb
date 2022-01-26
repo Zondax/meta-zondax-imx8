@@ -17,9 +17,9 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 PR = "r0"
 SRCSERVER = "git://github.com/TechNexion/u-boot-tn-imx.git;protocol=https"
 SRCOPTIONS = ""
-SRCBRANCH = "tn-imx_v2021.04_5.10.52_2.1.0-next"
+SRCBRANCH = "tn-imx_v2021.04_5.10.72_2.2.0-next"
 SRC_URI = "${SRCSERVER};branch=${SRCBRANCH}${SRCOPTIONS}"
-SRCREV = "e57a84b6944d55e7748ef6d09afbf4f3b4a131f7"
+SRCREV = "510b22fcbf369f6ac08c349981333f7cf6f2a9cc"
 SRC_URI:append = " file://splash.bmp"
 
 S = "${WORKDIR}/git"

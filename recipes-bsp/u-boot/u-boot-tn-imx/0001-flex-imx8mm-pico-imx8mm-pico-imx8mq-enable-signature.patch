@@ -1,0 +1,51 @@
+From 5551d8375987671438695015849d96e88257f645 Mon Sep 17 00:00:00 2001
+From: zondax <hello@zondax.ch>
+Date: Fri, 28 Jan 2022 12:03:38 +0000
+Subject: [PATCH] flex-imx8mm/pico-imx8mm/pico-imx8mq: enable signature
+ verification
+
+---
+ configs/flex-imx8mm_defconfig | 2 ++
+ configs/pico-imx8mm_defconfig | 2 ++
+ configs/pico-imx8mq_defconfig | 2 ++
+ 3 files changed, 6 insertions(+)
+
+diff --git a/configs/flex-imx8mm_defconfig b/configs/flex-imx8mm_defconfig
+index 9866f4e1ba..2e7276267a 100644
+--- a/configs/flex-imx8mm_defconfig
++++ b/configs/flex-imx8mm_defconfig
+@@ -24,6 +24,8 @@ CONFIG_SPL=y
+ CONFIG_DEFAULT_DEVICE_TREE="imx8mm-flex-pi"
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_FIT=y
++CONFIG_FIT_VERBOSE=y
++CONFIG_FIT_SIGNATURE=y
+ CONFIG_FIT_EXTERNAL_OFFSET=0x3000
+ CONFIG_SPL_LOAD_FIT=y
+ CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-imx/mkimage_fit_atf.sh"
+diff --git a/configs/pico-imx8mm_defconfig b/configs/pico-imx8mm_defconfig
+index c58a013894..9c7d45da5e 100644
+--- a/configs/pico-imx8mm_defconfig
++++ b/configs/pico-imx8mm_defconfig
+@@ -23,6 +23,8 @@ CONFIG_SPL=y
+ CONFIG_DEFAULT_DEVICE_TREE="imx8mm-pico-pi"
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_FIT=y
++CONFIG_FIT_VERBOSE=y
++CONFIG_FIT_SIGNATURE=y
+ CONFIG_FIT_EXTERNAL_OFFSET=0x3000
+ CONFIG_SPL_LOAD_FIT=y
+ CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-imx/mkimage_fit_atf.sh"
+diff --git a/configs/pico-imx8mq_defconfig b/configs/pico-imx8mq_defconfig
+index 30cac222d3..ec887345d4 100644
+--- a/configs/pico-imx8mq_defconfig
++++ b/configs/pico-imx8mq_defconfig
+@@ -21,6 +21,8 @@ CONFIG_SPL=y
+ CONFIG_DEFAULT_DEVICE_TREE="imx8mq-pico-pi"
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_FIT=y
++CONFIG_FIT_VERBOSE=y
++CONFIG_FIT_SIGNATURE=y
+ CONFIG_FIT_EXTERNAL_OFFSET=0x3000
+ CONFIG_SPL_LOAD_FIT=y
+ CONFIG_SPL_FIT_GENERATOR="arch/arm/mach-imx/mkimage_fit_atf.sh"

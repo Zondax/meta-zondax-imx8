@@ -1,3 +1,13 @@
+# Enable bootloader verification
+HAB_SIGN_ENABLE ?= "1"
+HAB_GENERATE_KEYS ?= "1"
+HAB_SIGN_CA_KEYNAME ?= "root-ca"
+HAB_SIGN_SRK_KEYNAME ?= "root-srk"
+HAB_SIGN_CSF_KEYNAME ?= "root-csf"
+HAB_SIGN_IMG_KEYNAME ?= "root-img"
+HAB_SIGN_KEYDIR ?= "${TOPDIR}/keys"
+HAB_SIGN_KEY_PASS ?= "dummy"
+
 # Enable kernel verification
 FIT_GENERATE_KEYS ?= "1"
 FIT_SIGN_INDIVIDUAL ?= "1"
